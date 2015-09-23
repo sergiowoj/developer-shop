@@ -18,6 +18,30 @@
       </div>
 
       <div class="row">
+        <h2>Enter an organization name to get its users</h2>
+        <form class="form-inline" role="form">
+          <div class="form-group">
+            <input id="orgname" type="text" placeholder="GitHub Organization" class="form-control">
+          </div>
+          <button type="submit" id="get_users" class="btn btn-success">Get users</button>
+        </form>
+      </div>
+
+      <div id="searchresult" class="row">
+        <table class="table table-stripped">
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Price</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="userslist">
+          </tbody>
+        </table>
+      </div>
+
+      <!-- <div class="row">
         <h2>Add a developer</h2>
         <form class="form-inline" role="form">
           <div class="form-group">
@@ -28,7 +52,7 @@
           </div>
           <button type="submit" class="btn btn-success">Add</button>
         </form>
-      </div>
+      </div> -->
 
       <div class="cart row">
         <h2>Cart</h2>
@@ -40,7 +64,7 @@
               <th></th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="cartbody">
             <tr class="product">
               <td>brenoc</td>
               <td>$224</td>
@@ -77,5 +101,9 @@
 
     <script src="lib/bootstrap/bootstrap.js"></script>
     <script src="script/main.js"></script>
+    <script type="text/javascript" src="script/get_users.js"></script>
+    <script type="text/javascript">
+      
+    </script>
   </body>
 </html>
