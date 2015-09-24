@@ -12,89 +12,57 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="row">
-        <h1>Dev Shop</h1>
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">devshop</a>
+        </div>
       </div>
+    </nav>
+    
+    <section class="search-area">
+      <div class="container">
+        <div class="search row">
+            <h2>Enter a GitHub organization to find developers</h2>
+            <form class="form-inline" role="form">
+              <div class="form-group">
+                <input id="orgname" type="text" placeholder="GitHub Organization" class="search-box form-control">
+              </div>
+              <button type="submit" id="get_users" class="btn btn-success">Search</button>
+            </form>
+        </div>
 
-      <div class="row">
-        <h2>Enter an organization name to get its users</h2>
-        <form class="form-inline" role="form">
-          <div class="form-group">
-            <input id="orgname" type="text" placeholder="GitHub Organization" class="form-control">
-          </div>
-          <button type="submit" id="get_users" class="btn btn-success">Get users</button>
-        </form>
-      </div>
-
-      <div id="searchresult" class="row">
-        <table class="table table-stripped">
-          <thead>
-            <tr>
-              <th>User</th>
-              <th>Price</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody id="userslist">
-          </tbody>
-        </table>
-      </div>
-
-      <!-- <div class="row">
-        <h2>Add a developer</h2>
-        <form class="form-inline" role="form">
-          <div class="form-group">
-            <input type="text" placeholder="GitHub Username" class="form-control">
-          </div>
-          <div class="form-group">
-            <input type="text" placeholder="Price" class="form-control">
-          </div>
-          <button type="submit" class="btn btn-success">Add</button>
-        </form>
-      </div> -->
-
-      <div class="cart row">
-        <h2>Cart</h2>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Username</th>
-              <th>Price</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody id="cartbody">
-            <tr class="product">
-              <td>brenoc</td>
-              <td>$224</td>
-              <td><button class="btn btn-danger pull-right">Remove</button></td>
-            </tr>
-            <tr class="product">
-              <td>firstdoit</td>
-              <td>$416</td>
-              <td><button class="btn btn-danger pull-right">Remove</button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="totalizer row">
-        <div class="col-sm-5">
-          <div class="row">
-            <table class="table">
-              <tbody>
-                <tr class="total">
-                  <td>Total</td>
-                  <td>$640</td>
-                </tr>
-              </tbody>
-            </table>
+        <div id="searchresult" class="search-result row">
+          <div id="userslist">
           </div>
         </div>
       </div>
+    </section>
 
-    </div> <!-- /container -->
+    <section class="cart-area">
+      <div class="container">
+        <div class="cart row">
+          <h2>Cart</h2>
+          <table id="cartbody" class="table">
+          </table>
+        </div>
+
+        <div class="totalizer row">
+          <div class="col-sm-5">
+            <div class="row">
+              <table class="table">
+                <tbody>
+                  <tr class="total">
+                    <td>Total</td>
+                    <td>$640</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div> <!-- /container -->
+    </section>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="lib/jquery/jquery-1.11.2.min.js"><\/script>')</script>

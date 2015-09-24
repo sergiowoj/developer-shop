@@ -16,7 +16,9 @@ if(isset($_GET["action"])){
 		add_to_cart($developer);
 	}
 	else if ($action == "remove"){
-		remove_from_cart($username);
+		if(isset($_GET["username"])){
+			remove_from_cart($_GET["username"]);
+		}
 	}
 	else if ($action == "clear"){
 		clear_cart();
@@ -27,7 +29,12 @@ if(isset($_GET["action"])){
 }
 
 function get_cart(){
-	echo json_encode($_SESSION);
+	
+	if(count($_SESSION["cart"]["products"]) == 0){
+		echo json_encode(array("message" => "Your cart is empty."));
+	} else {
+		echo json_encode($_SESSION);
+	}
 }
 
 function add_to_cart($developer){
@@ -39,15 +46,15 @@ function add_to_cart($developer){
 
 function remove_from_cart($username){
 	foreach ($_SESSION["cart"]["products"] as $i => $product) {
-		if($product["username"] == $username){
+		if($product["login"] == $username){
 			unset($_SESSION["cart"]["products"][$i]);
+			echo json_encode(array("message" => "'$username' removed from cart."));
 		}
 	}
 }
 
 function clear_cart(){
 	unset($_SESSION["cart"]);
+	echo json_encode(array("message" => "Your cart is now empty."));
 }
-
-
 ?>

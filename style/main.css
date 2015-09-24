@@ -4,6 +4,48 @@
    Author's custom styles
    ========================================================================== */
 
+.navbar { margin-bottom: 0; }
+.navbar-brand {font-size: 2em;}
+
+
+.search-area { background-color: #EEE;}
+.search { text-align: center; }
+.search h2 {margin: 10px 0;}
+.search .search-box { width: 510px; }
+
+.search-result { margin: 10px 0; }
+.search-result .user { margin: 0; padding: 10px 10px; }
+.search-result .user .wrapper { background-color: #FBFBFB; padding: 5px; border: 1px solid #E0E0E0; border-radius: 5px; }
+.search-result .user .user-avatar { float: left; }
+.search-result .user .user-avatar img { border-radius: 5px; }
+.search-result .user .user-info { height: 80px; margin-left: 90px; }
+.search-result .user .user-info .username { font-weight: bold; white-space: nowrap; overflow: hidden;}
+.search-result .user .user-buy { text-align: right; }
+.search-result .user .user-buy .user-price { display: inline-block; vertical-align: bottom; font-size: 1.3em; padding: 0px 5px; }
+.search-result .user .user-buy .user-add { display: inline-block; vertical-align: bottom; font-size: 1.5em; }
+.search-result .user .user-buy .user-add button { padding: 3px 15px; }
+
+.cart .user {  }
+.cart .user {  }
+.cart .user .user-avatar { margin-right: 10px; display: inline-block; vertical-align: top; }
+.cart .user .user-avatar img { border-radius: 5px; }
+.cart .user .user-info { display: inline-block; vertical-align: top; }
+.cart .user .user-info .username { font-size: 1.5em; }
+.cart .user .user-info .username .name { font-weight: bold; }
+.cart .user .user-info .user-price {  }
+
+
+.cart-area { }
+
+
+
+@media screen and (max-width: 768px) {
+	
+}
+
+@media screen and (max-width: 992px) {
+	
+}
 
 
 
