@@ -1,5 +1,6 @@
 <?php
 
+include ('config.php');
 include ('curl.php');
 
 if(!session_id()){
@@ -8,6 +9,8 @@ if(!session_id()){
 
 if(!isset($_SESSION["cart"])){
 	$_SESSION["cart"] = array();
+	$_SESSION["cart"]["order_total"] = 0;
+	$_SESSION["cart"]["products"] = array();
 }
 
 if(isset($_GET["action"])){
@@ -17,7 +20,7 @@ if(isset($_GET["action"])){
 		if(isset($_GET["username"]) && isset($_GET["price"])){
 			$username = $_GET["username"];
 			$price = $_GET["price"];
-			add_to_cart($username, $price);
+			add_to_cart($username, $price, $token);
 			update_order_total();
 		} else {
 			echo json_encode(array("message" => "Error: missing username parameter."));
@@ -30,7 +33,6 @@ if(isset($_GET["action"])){
 		} else {
 			echo json_encode(array("message" => "Error: missing username parameter."));
 		}
-
 	}
 	else if($action == "update"){
 		if(isset($_GET["username"]) && isset($_GET["hours"])){
@@ -59,7 +61,7 @@ function get_cart(){
 	}
 }
 
-function add_to_cart($username, $price){
+function add_to_cart($username, $price, $token){
 	$already_in = false;
 	if(isset($_SESSION["cart"])){
 		foreach ($_SESSION["cart"]["products"] as $i => $product) {
@@ -70,7 +72,7 @@ function add_to_cart($username, $price){
 		if($already_in){
 			echo json_encode(array("message" => "'$username' is already in your cart."));
 		} else {
-			$product = json_decode(curl_get_content("https://api.github.com/users/".$username));
+			$product = json_decode(curl_get_content("https://api.github.com/users/".$username, $token));
 			$product->price = number_format($price, 2, ',', '');
 			$product->hours = 1;
 			$total_price = $price * $product->hours;
@@ -103,17 +105,18 @@ function remove_from_cart($username){
 }
 
 function update_order_total(){
-
 		$order_total = 0;
 		foreach ($_SESSION["cart"]["products"] as $i => $product) {
 			$order_total = $order_total + $product->total_price;
 		}
 		$_SESSION["cart"]["order_total"] = number_format($order_total, 2, ',', '');
-
 }
 
 function clear_cart(){
-	unset($_SESSION["cart"]);
+	$_SESSION["cart"]["order_total"] = 0;
+	$_SESSION["cart"]["products"] = array();
+	// unset($_SESSION["cart"]["order_total"]);
+	// unset($_SESSION["cart"]["products"]);
 	echo json_encode(array("message" => "Your cart is now empty."));
 }
 ?>
