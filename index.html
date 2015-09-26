@@ -33,8 +33,8 @@
         </div>
 
         <div id="searchresult" class="search-result row">
-          <div id="userslist">
-          </div>
+          <div id="organization" class="org" ></div>
+          <div id="userslist"></div>
         </div>
       </div>
     </section>
@@ -43,21 +43,29 @@
       <div class="container">
         <div class="cart row">
           <h2>Cart</h2>
-          <table id="cartbody" class="table">
+          <table  class="table">
+            <thead>
+              <th></th>
+              <th>Price per hour</th>
+              <th># of hours</th>
+              <th>Total amount</th>
+              <th></th>
+            </thead>
+            <tbody id="cartbody"></tbody>
           </table>
         </div>
 
-        <div class="totalizer row">
-          <div class="col-sm-5">
+        <div class="totalizer row ">
+          <div class="col-sm-3 pull-right">
             <div class="row">
-              <table class="table">
-                <tbody>
-                  <tr class="total">
-                    <td>Total</td>
-                    <td>$640</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div class="order-total">
+                <span>Order total: R$ </span>
+                <span id="order-total">0,00</span>
+              </div>
+              <hr>
+              <div class="checkout">
+                <button type="submit" class="btn btn-info">Proceed to checkout</button>
+              </div>
             </div>
           </div>
         </div>

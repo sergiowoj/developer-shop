@@ -14,8 +14,11 @@
 .search .search-box { width: 510px; }
 
 .search-result { margin: 10px 0; }
+.search-result .org img { border-radius: 5px; float: left; }
+.search-result .org h3 { margin: 0; }
+.search-result .org .org-info { margin-left: 80px; }
 .search-result .user { margin: 0; padding: 10px 10px; }
-.search-result .user .wrapper { background-color: #FBFBFB; padding: 5px; border: 1px solid #E0E0E0; border-radius: 5px; }
+.search-result .wrapper { background-color: #FBFBFB; padding: 5px; border: 1px solid #E0E0E0; border-radius: 5px; }
 .search-result .user .user-avatar { float: left; }
 .search-result .user .user-avatar img { border-radius: 5px; }
 .search-result .user .user-info { height: 80px; margin-left: 90px; }
@@ -25,17 +28,28 @@
 .search-result .user .user-buy .user-add { display: inline-block; vertical-align: bottom; font-size: 1.5em; }
 .search-result .user .user-buy .user-add button { padding: 3px 15px; }
 
-.cart .user {  }
-.cart .user {  }
-.cart .user .user-avatar { margin-right: 10px; display: inline-block; vertical-align: top; }
-.cart .user .user-avatar img { border-radius: 5px; }
-.cart .user .user-info { display: inline-block; vertical-align: top; }
-.cart .user .user-info .username { font-size: 1.5em; }
-.cart .user .user-info .username .name { font-weight: bold; }
-.cart .user .user-info .user-price {  }
+.cart-area { padding-bottom: 30px; }
+.cart-area .cart th { text-align: center; }
+.cart-area .cart .user td { vertical-align: middle; }
+.cart-area .cart .user .user-avatar { margin-right: 10px; display: inline-block; vertical-align: top; }
+.cart-area .cart .user .user-avatar img { border-radius: 5px; }
+.cart-area .cart .user .user-info { display: inline-block; vertical-align: top; }
+.cart-area .cart .user .user-info .username { font-size: 1.5em; }
+.cart-area .cart .user .user-info .username .name { font-weight: bold; }
+.cart-area .cart .user .user-hours { text-align: center; }
+.cart-area .cart .user .user-price { text-align: center; }
+.cart-area .cart .user .user-total-price { text-align: center; }
+.cart-area .cart .user input.hours { display:inline-block; vertical-align: middle; width: 60px; text-align: center; }
+.cart-area .cart .user button.update { display:inline-block; vertical-align: middle; text-align: center; margin-left: 5px; }
+.cart-area .cart .user .user-remove { text-align: right; }
 
 
-.cart-area { }
+.cart-area .totalizer { }
+.cart-area .totalizer .order-total { text-align: right; }
+.cart-area .totalizer .order-total span { display: inline-block; vertical-align: middle; font-weight: bold; font-size: 1.3em; }
+.cart-area .totalizer hr { height: 1px; background-color: #DDD; margin: 3px 0;}
+.cart-area .totalizer .checkout { text-align: right; width:;}
+.cart-area .totalizer .checkout button { width: 100%;}
 
 
 
