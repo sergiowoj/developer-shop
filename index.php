@@ -64,7 +64,7 @@
               </div>
               <hr>
               <div class="checkout">
-                <a href="checkout.php" class="btn btn-primary">Proceed to checkout</a>
+                <a href="checkout.html" class="btn btn-primary">Proceed to checkout</a>
               </div>
             </div>
           </div>
