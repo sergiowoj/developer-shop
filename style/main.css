@@ -54,11 +54,12 @@
 
 
 @media screen and (max-width: 768px) {
-	
+
 }
 
 @media screen and (max-width: 992px) {
-	
+		.search-result .user .user-info { height: 110px; }
+	.search-result .user .user-buy .user-price { font-size: 1.1em; }
 }
 
 

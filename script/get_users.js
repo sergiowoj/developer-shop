@@ -15,7 +15,7 @@ $(function(){
     if(org_name != ''){
       requestJSON(org_members_uri, function(org_members_json) {
         if(org_members_json.message == "Not Found") {
-          $('#userslist').html("<div class='alert alert-danger'>Sorry, we didn't find '"+org_name+"' in GitHub</div>");
+          $('#userslist').html("<div class='alert alert-danger'>Sorry, we didn't find '"+org_name+"' in GitHub.</div>");
         } 
         else {
           requestJSON(org_uri, function(org_json){
@@ -56,7 +56,7 @@ $(function(){
         } 
       });
     } else {
-      $('#userslist').html("<div class='alert alert-danger'>Nothing to search...</div>");
+      $('#userslist').html("<div class='alert alert-danger'>Nothing to search.</div>");
     }
   });
 
@@ -143,7 +143,7 @@ $(function(){
                 '<td class="user-price">R$ '+this.price+'/h</td>'+
                 '<td class="user-hours"><input type="text" class="hours form-control" maxlength="3" value="'+this.hours+'" data-username="'+this.login+'"><button class="update btn btn-info" type="submit" class="btn btn-success">Update</button></td>'+
                 '<td class="user-total-price">R$ '+this.total_price+'</td>'+
-                '<td class="user-remove" data-username="'+this.login+'"><button type="submit" class="remove-from-cart btn btn-danger">Remove from cart</button></td>'+
+                '<td class="user-remove" data-username="'+this.login+'"><button type="submit" class="remove-from-cart btn btn-default"><span class="glyphicon glyphicon-remove"></span></button></td>'+
               '</tr>';
             });
             $('#cartbody').html(output); 
