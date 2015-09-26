@@ -1,0 +1,10 @@
+{
+    "name": "sergio/developer-shop",
+    "authors": [
+        {
+            "name": "Sergio Oliveira",
+            "email": "sergiowoj@gmail.com"
+        }
+    ],
+    "require": {}
+}
