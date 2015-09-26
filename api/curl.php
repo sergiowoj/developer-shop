@@ -1,15 +1,14 @@
 <?php
-
 /**
  * 
  */
-function curl_get_content($url){
+function curl_get_content($url, $token){
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, $url);
 
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: token aa73cca7e55bb330176b1934d33fe52d8fdddd15 ')); 
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array("Authorization: token ".$token." ")); 
 	curl_setopt($ch, CURLOPT_USERAGENT,'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13');
 	// curl_setopt($ch, CURLOPT_VERBOSE, 1);
 	// curl_setopt($ch, CURLOPT_HEADER, 1);
@@ -33,7 +32,7 @@ function curl_get_content($url){
 /**
  * 
  */
-function curl_get_content_mt($urls){
+function curl_get_content_mt($urls, $token){
 	$nodes = $urls;
 	$node_count = count($nodes);
 	$curl_arr = array();
@@ -45,7 +44,7 @@ function curl_get_content_mt($urls){
 	    $curl_arr[$i] = curl_init($url);
 	    curl_setopt($curl_arr[$i], CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($curl_arr[$i], CURLOPT_SSL_VERIFYPEER, 0);
-		curl_setopt($curl_arr[$i], CURLOPT_HTTPHEADER, array('Authorization: token aa73cca7e55bb330176b1934d33fe52d8fdddd15 ')); 
+		curl_setopt($curl_arr[$i], CURLOPT_HTTPHEADER, array("Authorization: token ".$token." ")); 
 		curl_setopt($curl_arr[$i], CURLOPT_USERAGENT,'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13');
 	    curl_multi_add_handle($master, $curl_arr[$i]);
 	}

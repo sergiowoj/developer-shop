@@ -49,7 +49,7 @@
 .cart-area .totalizer .order-total span { display: inline-block; vertical-align: middle; font-weight: bold; font-size: 1.3em; }
 .cart-area .totalizer hr { height: 1px; background-color: #DDD; margin: 3px 0;}
 .cart-area .totalizer .checkout { text-align: right; width:;}
-.cart-area .totalizer .checkout button { width: 100%;}
+.cart-area .totalizer .checkout a { width: 100%;}
 
 
 
