@@ -1,6 +1,7 @@
 <?php
 /**
- * 
+ * Function to get all members from an Organization.
+ * I used cURL for this because GitHub API works better with an authenticated request.
  */
 function curl_get_content($url, $token){
 	$ch = curl_init();
@@ -30,13 +31,16 @@ function curl_get_content($url, $token){
 }
 
 /**
- * 
+ * Function to get information from all users passed by parameter.
+ * It works very different from the above one because it is multi threaded.
+ * It receives an array of users URIs and runs each request independently.
  */
 function curl_get_content_mt($urls, $token){
 	$nodes = $urls;
 	$node_count = count($nodes);
 	$curl_arr = array();
 	$master = curl_multi_init();
+	$results = array();
 
 	for($i = 0; $i < $node_count; $i++)
 	{

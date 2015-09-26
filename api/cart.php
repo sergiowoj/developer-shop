@@ -13,6 +13,9 @@ if(!isset($_SESSION["cart"])){
 	$_SESSION["cart"]["products"] = array();
 }
 
+/**
+ * Action handler
+ */
 if(isset($_GET["action"])){
 	$action = $_GET["action"];
 
@@ -53,6 +56,10 @@ if(isset($_GET["action"])){
 	}
 }
 
+
+/**
+ * Function to return all cart info - order total and products (selected users/developers)
+ */
 function get_cart(){
 	if(count($_SESSION["cart"]["products"]) == 0){
 		echo json_encode(array("message" => "Your cart is empty."));
@@ -61,6 +68,9 @@ function get_cart(){
 	}
 }
 
+/**
+ * Function to add users/developers to the cart.
+ */
 function add_to_cart($username, $price, $token){
 	$already_in = false;
 	if(isset($_SESSION["cart"])){
@@ -84,6 +94,10 @@ function add_to_cart($username, $price, $token){
 	}
 }
 
+/**
+ * Function to update total price for an user.
+ * Takes the username and hours selected on the client and calculate the total price.
+ */
 function update_user_total($username, $hours){
 	foreach ($_SESSION["cart"]["products"] as $i => $product) {
 		if($product->login == $username){
@@ -95,6 +109,9 @@ function update_user_total($username, $hours){
 	}
 }
 
+/**
+ * Function to remove an user/developer from cart.
+ */
 function remove_from_cart($username){
 	foreach ($_SESSION["cart"]["products"] as $i => $product) {
 		if($product->login == $username){
@@ -104,6 +121,10 @@ function remove_from_cart($username){
 	}
 }
 
+/**
+ * Function to update order total.
+ * Goes through all cart itens adding all total_prices to make the order total.
+ */
 function update_order_total(){
 		$order_total = 0;
 		foreach ($_SESSION["cart"]["products"] as $i => $product) {
@@ -112,6 +133,9 @@ function update_order_total(){
 		$_SESSION["cart"]["order_total"] = number_format($order_total, 2, ',', '');
 }
 
+/**
+ * Function to remove all information form cart - order_total and products.
+ */
 function clear_cart(){
 	$_SESSION["cart"]["order_total"] = 0;
 	$_SESSION["cart"]["products"] = array();
