@@ -169,6 +169,34 @@ $(function(){
       }
     });
   }
+
+  function checkout(){
+    requestJSON("api/cart.php?action=get", function(response){
+      if(response.message == "Your cart is empty.") {
+        $('#checkoutbody').html("Your cart is empty."); 
+        $('#order-total').html("0,00");
+      } else {
+        var products = response.cart.products;
+        var output = "";
+        var company = "";
+        $.each(products, function(){
+          output = output +
+          '<tr class="user">'+
+            '<td>'+
+              '<img src="'+this.avatar_url+'" width="40px">'+
+              '<div class="user-info">'+
+                '<div class="username"><span class="name">'+this.name+'</span> | <a href="http://www.github.com/'+this.login+'">'+this.login+'</a></div>'+
+              '</div>'+
+            '</td>'+
+            '<td class="user-price">R$ '+this.price+' x '+this.hours+'</td>'+
+            '<td class="user-total-price">R$ '+this.total_price+'</td>'+
+          '</tr>';
+        });
+        $('#checkoutbody').html(output); 
+        $('#checkout-order-total').html(response.cart.order_total);
+      }
+    });
+  }
   
   /**
   * This is a generic function to send AJAX requests to APIs.
@@ -183,6 +211,13 @@ $(function(){
     });
   }
 
-  // Update cart on first run.
-  updateCart();
+
+  if(location.pathname.substring(1) === "developer-shop/checkout.php"){
+    checkout();
+  }
+  else if(location.pathname.substring(1) === "developer-shop/index.php" || location.pathname.substring(1) === "developer-shop/"){
+    // Update cart on first run.
+    updateCart();  
+  }
+  
 });

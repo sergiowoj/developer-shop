@@ -51,6 +51,15 @@
 .cart-area .totalizer .checkout { text-align: right; width:;}
 .cart-area .totalizer .checkout a { width: 100%;}
 
+.checkout th { text-align: center; }
+.checkout .thanks { text-align: center; padding: 100px 20px; background-color: #F3F3F3; margin-top: 20px; border: 1px solid #DEDEDE; border-radius: 5px; }
+.checkout .table { margin-top: 20px; }
+.checkout .user img { display: inline-block; vertical-align: middle; }
+.checkout .user .user-info { display: inline-block; vertical-align: middle; text-align: center; }
+.checkout .user .user-info .username { margin-left: 5px; }
+.checkout .user .user-price { vertical-align: middle; text-align: center; }
+.checkout .user .user-total-price { vertical-align: middle; text-align: center; }
+
 
 
 @media screen and (max-width: 768px) {

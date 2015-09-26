@@ -19,6 +19,36 @@
         </div>
       </div>
     </nav>
+
+    <section>
+      <div class="container">
+        <div class="checkout row">
+          <div class="col-sm-4">
+            <div class="thanks">
+              <h2>Thanks for buying with us!</h2>
+              <a href="index.php"><< Continue shopping</a>
+            </div>
+          </div>
+          <div class="users-list col-sm-8">
+            <h3>Order summary</h3>
+            <table class="table">
+            <thead>
+              <th></th>
+              <th>Price x hours</th>
+              <th>Total amount</th>
+            </thead>
+            <tbody id="checkoutbody"></tbody>
+            <tr>
+              <td></td>
+              <td class="text-center"><b>Order total</b></td>
+              <td class="text-center"><b>R$ <span id="checkout-order-total">0,00</span></b></td>
+            </tr>
+          </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
     
     
 
@@ -29,7 +59,6 @@
     <script src="script/main.js"></script>
     <script type="text/javascript" src="script/get_users.js"></script>
     <script type="text/javascript">
-      
     </script>
   </body>
 </html>
