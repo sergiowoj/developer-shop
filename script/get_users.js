@@ -211,13 +211,7 @@ $(function(){
     });
   }
 
-
-  if(location.pathname.substring(1) === "developer-shop/checkout.php"){
-    checkout();
-  }
-  else if(location.pathname.substring(1) === "developer-shop/index.php" || location.pathname.substring(1) === "developer-shop/"){
-    // Update cart on first run.
-    updateCart();  
-  }
+updateCart();
+checkout();
   
 });
