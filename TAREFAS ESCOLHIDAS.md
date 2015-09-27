@@ -26,7 +26,7 @@ Requisito interessante mas, nesse caso, dispensável visto que existem outros ma
 
 ## Server side
 
-A linguagem escolhida para o back end foi o PHP porque é a que eu mais tenho afinidade e já uso há um bom tempo, o que possibilitou a entrega do aplicativo num prazo razoável. As outras linguagens propostas talvez permitissem uma performance maior, como é o caso do Node, que tornaria muito mais rápida a comunicação cliente-servidor por diversos fatores (ambos os lados entenderiam JSON sem problemas, chamadas ao servidos seriam muito mais leves, mais moderna, etc). Porém, por mais que eu conheça JavaScript, ainda necessitaria de um tempo para conhecer a nova tecnologia.
+A linguagem escolhida para o back end foi o PHP porque é a que eu mais tenho afinidade e já uso há um bom tempo, o que possibilitou a entrega do aplicativo num prazo razoável. As outras linguagens propostas talvez permitissem uma performance maior, como é o caso do Node, que tornaria muito mais rápida a comunicação cliente-servidor por diversos fatores (ambos os lados entenderiam JSON sem problemas, chamadas ao serviços seriam muito mais leves, linguagem mais moderna, etc). Porém, por mais que eu conheça JavaScript, ainda necessitaria de um tempo para conhecer a nova tecnologia.
 
 ## Client side
 
