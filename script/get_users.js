@@ -145,7 +145,7 @@ $(function(){
         var output = "";
         var company = "";
         $.each(products, function(){
-          if(this.company != ""){ company = "Works at "+this.company; } 
+          if(!!this.company){ company = "Works at "+this.company; } 
           else { company = ""; }
           output = output +
           '<tr class="user">'+
