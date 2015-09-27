@@ -77,7 +77,6 @@
 
     <script src="lib/bootstrap/bootstrap.js"></script>
     <script src="script/main.js"></script>
-    <script type="text/javascript" src="script/get_users.js"></script>
     <script type="text/javascript">
       
     </script>
