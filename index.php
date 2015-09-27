@@ -15,7 +15,7 @@
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="index.html">devshop</a>
+          <a class="navbar-brand" href="index.php">devshop</a>
         </div>
       </div>
     </nav>
